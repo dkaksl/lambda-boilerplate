@@ -3,14 +3,19 @@ service: my-app
 provider:
   name: aws
   runtime: nodejs12.x
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+      Resource: "arn:aws:dynamodb:us-east-1:${opt:account_id}:table/todos"
 
 functions:
-  helloWorld:
-    handler: handler.run
+  createTodo:
+    handler: create.run
     events:
       - http:
-          path: /
-          method: get
+          path: todos
+          method: post
 
 resources:
   Resources:
