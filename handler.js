@@ -1,3 +1,8 @@
 module.exports.run = async(event) => {
-    return "hello async";
+    return {
+        statusCode: 200,
+        body: JSON.stringify({
+            message: "hello world",
+        }),
+    };
 };
