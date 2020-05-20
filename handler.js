@@ -1,4 +1,3 @@
-module.exports.run = (event, context, callback) => {
-    console.log("hello console");
-    callback(null, "Hello World");
+module.exports.run = async(event) => {
+    return "hello async";
 };
