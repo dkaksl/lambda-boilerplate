@@ -21,4 +21,4 @@
 
 5.  Deploy service
 
-        sls deploy
+        sls deploy --account_id <your_account_id>
